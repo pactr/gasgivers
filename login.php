@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 
+=======
+
+>>>>>>> aeab546 (Updated deployment configuration)
 <?php
 session_set_cookie_params([
     'lifetime' => 0,
@@ -8,6 +12,7 @@ session_set_cookie_params([
 ]);
 session_start();
 include 'includes/db.php';
+<<<<<<< HEAD
 ?>
 
 <!DOCTYPE html>
@@ -114,6 +119,114 @@ include 'includes/db.php';
 <?php
 
 
+=======
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #1e90ff, #ff4fd8);
+        }
+
+        .login-box {
+            background: white;
+            padding: 40px;
+            width: 320px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        .login-box h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .login-box input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        .login-box button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #1e90ff, #ff4fd8);
+            border: none;
+            color: white;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .login-box button:hover {
+            opacity: 0.85;
+        }
+
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+
+        .register-link {
+            margin-top: 15px;
+        }
+
+        .register-link a {
+            color: #ff4fd8;
+            font-weight: bold;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="login-box">
+
+    <h2>Login</h2>
+
+    <form method="POST">
+
+        <input 
+            type="text" 
+            name="username" 
+            placeholder="Username" 
+            required
+        >
+
+        <input 
+            type="password" 
+            name="password" 
+            placeholder="Password" 
+            required
+        >
+
+        <button type="submit" name="login">
+            Login
+        </button>
+
+    </form>
+
+<?php
+
+
+>>>>>>> aeab546 (Updated deployment configuration)
 if (isset($_POST['login'])) {
 
     $username = $_POST['username'];
@@ -135,12 +248,21 @@ if (isset($_POST['login'])) {
 
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['role'] = $user['role'];
+<<<<<<< HEAD
 
             if ($user['role'] == 'admin') {
                 header("Location: admin/dashboard.php");
             } else {
                 header("Location: shop.php");
             }
+=======
+
+            if ($user['role'] == 'admin') {
+                header("Location: admin/dashboard.php");
+            } else {
+                header("Location: shop.php");
+            }
+>>>>>>> aeab546 (Updated deployment configuration)
             exit();
 
         } else {
@@ -154,6 +276,7 @@ if (isset($_POST['login'])) {
     $stmt->close();
 }
 ?>
+<<<<<<< HEAD
 <div class="register-link">
     <p>
         Don't have an account?
@@ -166,4 +289,18 @@ if (isset($_POST['login'])) {
 </div>
 
 </body>
+=======
+<div class="register-link">
+    <p>
+        Don't have an account?
+        <a href="register.php">
+            Register
+        </a>
+    </p>
+</div>
+
+</div>
+
+</body>
+>>>>>>> aeab546 (Updated deployment configuration)
 </html>
